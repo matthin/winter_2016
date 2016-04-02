@@ -1,0 +1,3 @@
+guard :shell do
+  watch('research_assignment.tex')  { `lualatex research_assignment.tex` }
+end
