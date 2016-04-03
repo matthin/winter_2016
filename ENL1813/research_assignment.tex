@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 
+\newcommand{\glossaryentry}[2]{#1 - #2}
+
 \title{A Comparison of Immutable and Mutable Data Structures}
 \author{}
 \date{}
@@ -31,6 +33,19 @@ April 1, 2016
 \end{center}
 
 \section{Glossary}
+\glossaryentry{Data Structure}{
+  A format to efficiently store information. A common data
+  structure is the array, where data is stored sequentially in memory.
+}
+
+\glossaryentry{Immutable Data Structure}{
+  A data structure that cannot be modified in-place.
+  Instead, a new copy with the modifications is created.
+}
+
+\glossaryentry{Mutable Data Structure}{
+  A data structure that can be modified in-place.
+}
 
 \section{Introduction}
 The purpose of this comparison is to determine which type of data structure,
