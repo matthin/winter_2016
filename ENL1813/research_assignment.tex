@@ -68,6 +68,24 @@ Computer Engineering and Computer Science students will find this report useful,
 due to the crucial importance of data structures in our programs.
 
 \section{Performance}
+\subsection{Immutable Data Structures}
+Immutable data structures have a reputation of low-performance, but this is not
+exactly true in the modern-age. With the rise of multi-core consumer devices,
+many of the performance short-falls have been removed, and in fact, became
+advantages \cite{slaks}.
+
+When sharing a mutable data structure across many threads, the programmer must
+use a lock to prevent modifications from conflicting. Locks are theoretically
+cheap when it comes to performance, but practically are expensive
+\cite{attractive_chaos}.
+
+Immutable data structures in comparison doesn't need the use of atomic locks.
+Instead, each thread modifies a section of the structure, with a "master"
+thread combining those changes when ready.
+
+As you can see, immutability has many performance benefits when using multiple
+threads. Therefore, immutable data structures are very efficient when used in a
+multi-core environment, which most consumer and enterprise devices fit into.
 
 \section{Ease of Use}
 
@@ -88,6 +106,13 @@ due to the crucial importance of data structures in our programs.
   [Online].
   Available: http://blog.slaks.net/2013-07-22/thread-safe-data-structures/
   [Accessed 03 April 2016]
+
+\bibitem{attractive_chaos}
+  "AttractiveChaos,"
+  2011.
+  [Online].
+  Available: https://attractivechaos.wordpress.com/2011/10/06/multi-threaded-programming-efficiency-of-locking/
+  [Accessed 08 April 2016]
 
 \end{thebibliography}
 
