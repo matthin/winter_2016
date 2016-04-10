@@ -1,6 +1,10 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
+\usepackage{float}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \newcommand{\glossaryentry}[2]{#1 - #2}
 
@@ -87,6 +91,19 @@ Immutable data structures in comparison doesn't need the use of atomic locks.
 Instead, each thread modifies a section of the structure, with a "master"
 thread combining those changes when ready.
 
+For example, let's say there's an immutable string containing the letter 'a'.
+If you wanted to change the string to contain 'ab', you'd need to make a whole
+new string object containing 'ab'. An example of this can be seen in figure 1.
+
+
+\begin{figure}[H]
+\centering
+
+\includegraphics{immutable_string}
+\caption{Memory of an immutable string \cite{mit_reading_9}}
+
+\end{figure}
+
 As you can see, immutability has many performance benefits when using multiple
 threads. Therefore, immutable data structures are very efficient when used in a
 multi-core environment, which most consumer and enterprise devices fit into.
@@ -111,6 +128,14 @@ same but its state changes.  It is not the case that we replace the old glass
 with new one and fill up with water.  Therefore, when we are modeling a
 real-world domain, it makes more sense to use mutable data structures
 \cite{peter_toro}.
+
+\begin{figure}[H]
+\centering
+
+\includegraphics{string_builder}
+\caption{Memory of Java's StringBuilder \cite{mit_reading_9}}
+
+\end{figure}
 
 \section{Safety}
 \clearpage
@@ -159,6 +184,14 @@ real-world domain, it makes more sense to use mutable data structures
 	[Online].
 	Available: http://programmers.stackexchange.com/questions/151733/if-immutable-objects-are-good-why-do-people-keep-creating-mutable-objects.
 	[Accessed 03 April 2016]
+
+\bibitem{mit_reading_9}
+	MIT
+	"Reading 9: Mutability and Immutability"
+	2015.
+	[Online].
+	Available: http://web.mit.edu/6.005/www/fa15/classes/09-immutability/
+	[Accessed 10 April 2016]
 
 \end{thebibliography}
 
