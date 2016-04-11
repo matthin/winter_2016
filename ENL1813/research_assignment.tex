@@ -50,13 +50,28 @@ April 1, 2016
   structure is the array, where data is stored sequentially in memory.
 }
 
+\glossaryentry{Functional}{
+  A style of programming where smaller functions are combined to create larger,
+  more complex functions.
+}
+
 \glossaryentry{Immutable Data Structure}{
   A data structure that cannot be modified in-place.
   Instead, a new copy with the modifications is created.
 }
 
+\glossaryentry{Lock}{
+  A mechanism for limiting concurrent modifications of a mutable data
+  structure.
+}
+
 \glossaryentry{Mutable Data Structure}{
   A data structure that can be modified in-place.
+}
+
+\glossaryentry{Object-oriented}{
+  A style of programming where objects represent data. Ex. A Car object,
+  containing 4 wheel sub-objects.
 }
 \clearpage
 
@@ -124,12 +139,12 @@ data structures by very definition can't directly be modified, the programmer
 must take take great care when using an immutable data structure.
 
 Most programmers are used to object-oriented programming, where mutability has
-become the default. In contrast, functional programming has immutablity as
-default \cite{miles}. Thefefore, the ease of use depends on which style of
+become the default. In contrast, functional programming has immutability as
+default \cite{miles}. Therefore, the ease of use depends on which style of
 programming you're used to.
 
 However, since the object-oriented style of programming dominates many areas
-of software development, it can be said that immutablity doesn't have an
+of software development, it can be said that immutability doesn't have an
 advantage in ease of use for the majority of programmers \cite{ieee_spectrum}.
 
 \subsection{Mutable Data Structures}
@@ -137,8 +152,8 @@ Our perception of reality is based on mutable objects. For example, when we
 fill up a glass of water, we perceive it as the same object all long. Its
 identity remains the same but its state changes. It is not the case that we
 replace the old glass with new one and fill up with water. Therefore, when we
-are modeling a real-world domain, it makes more sense to use mutable
-a data structure \cite{peter_toro}.
+are modelling a real-world domain, it makes more sense to use a mutable data
+structure \cite{peter_toro}.
 
 For example, let's say there's a mutable string containing 'a'. If you wanted
 to change the string to contain 'ab', you'd just add the letter 'b' to the
@@ -171,7 +186,7 @@ the container; for mutable data, you do not.
 Mutable data structures are by their very nature, not very safe. Since the data
 can be modified freely, the programmer must take great care when sharing the
 data across multiple threads. The common solution to sharing mutable data
-across multiple threads is to use a mutex, but this is not a foolproof,
+across multiple threads is to use a lock, but this is not a foolproof,
 solution, and has many performance drawbacks.
 
 If only a single thread is being used, safety is still an issue for mutable
@@ -188,17 +203,17 @@ In conclusion, both immutable and mutable data structures are applicable to a
 wide range of programming problems.
 
 When it comes to performance, there is no clear winner. Both are solid choices
-to different types of programming problems. Immutablility wins for performance
+to different types of programming problems. Immutability wins for performance
 when it comes to multi-core systems, and mutability wins when it comes to
 single-core systems.
 
 Mutability does win when it comes to ease of use, but its not a clear victory.
 Depending on which type programming background you have, mutability or
-immutablity could be easier to use. Therefore, we can't say mutability totally
+immutability could be easier to use. Therefore, we can't say mutability totally
 wins, but for sure mutability is easier; since the majority of programmers
-are more familure with mutability.
+are more failure with mutability.
 
-Immutablity has a clear victory when it comes to safety. Due to the fact that
+Immutability has a clear victory when it comes to safety. Due to the fact that
 the content can't change.
 
 \section*{Recommendation}
@@ -209,8 +224,8 @@ Immutable data structures are a good, general choice for a wide range of
 programs. Due to the widespread use of multi-core CPU's, immutability is a
 very good choice.
 
-However, when programming on a single-core CPU, such as an embeded system,
-immutablity is clearly not the best choice. Mutability is much better suited to
+However, when programming on a single-core CPU, such as an embedded system,
+immutability is clearly not the best choice. Mutability is much better suited to
 such a use-case.
 
 \clearpage
