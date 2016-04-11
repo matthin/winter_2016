@@ -130,6 +130,21 @@ new string object containing 'ab'. An example of this can be seen in figure 1.
 As you can see, immutability has many performance benefits when using multiple
 threads. Therefore, immutable data structures are very efficient when used in a
 multi-core environment, which most consumer and enterprise devices fit into.
+
+\subsection{Mutable Data Structures}
+Since mutable data structures are able to be modified in-place directly, it
+would seem that there are clear performance benefits. However, it's
+not so simple. The performance benefits that are gained, shouldn't be often
+used.
+
+When making many random non-sequential modifications to a data structure is
+needed, it's clear that a mutable data structure would be the best choice.
+However, a codebase which works with data in such a way is prone to complexity
+issues. It's much easier to reason with a section of code that only modifies a
+data structure in specific, easy to see areas.
+
+Therefore, the performance benefits which are inherent in mutable data
+structures, shouldn't be taken advantage of; at least when possible.
 \clearpage
 
 \section{Ease of Use}
