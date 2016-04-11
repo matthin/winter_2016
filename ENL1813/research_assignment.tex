@@ -154,6 +154,33 @@ string's location in memory. An example of this can be seen in figure 2.
 \clearpage
 
 \section{Safety}
+\subsection{Immutable Data Structures}
+One of the most significant advantages of immutable data is that it’s
+completely thread-safe. The primary reason an object may not be thread-safe is
+that one thread may change its content while another thread is reading the
+content, resulting in a situation where the reading thread may "see" an invalid
+or outdated "view" of the object's data. If the object is immutable, its data
+cannot be changed, and this problem does not manifest.
+
+Mutable data structures are not as safe as immutable. Furthermore, most of the
+safety problems caused by mutable data structures, is because of the memory
+being modified consistently. For immutable data, you always know what is inside
+the container; for mutable data, you do not.
+
+\subsection{Mutable Data Structures}
+Mutable data structures are by their very nature, not very safe. Since the data
+can be modified freely, the programmer must take great care when sharing the
+data across multiple threads. The common solution to sharing mutable data
+across multiple threads is to use a mutex, but this is not a foolproof,
+solution, and has many performance drawbacks.
+
+If only a single thread is being used, safety is still an issue for mutable
+data structures. If one of these data structures is being modified in many
+places all over the codebase, it will be difficult to understand how bugs pop
+up. It's common to limit the modifications of mutable data structures to
+specific areas of the codebase. In essence, you'd want to sort-of convert a
+mutable data structure into an immutable data structure once you are finished
+any modifications.
 \clearpage
 
 \section*{Conclusion}
