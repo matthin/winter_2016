@@ -82,13 +82,13 @@ immutable or mutable, is best for a range of programming problems.
 For most of the history of Computer Science, mutability has been the standard.
 However, with the rise of functional languages, immutability has been gaining
 traction \cite{ieee_spectrum}. With this report, we'll hopefully be able to
-understand the benefits of immutable and mutable data structures. Which will
+understand the benefits of immutable and mutable data structures, which will
 give us insight into what is causing the growth of immutability.
 
 Most software developers are used to the object-oriented style of programming,
 where mutable data structures are very popular. Since mutable data structures
 are popular with the dominate style of programming, immutable data structures
-have been left behind, in favor of the older more popular mutable data
+have been left behind, in favor of the older, more popular mutable data
 structures.
 
 This report will compare the differences between immutable and mutable data
@@ -101,9 +101,9 @@ due to the crucial importance of data structures in our programs.
 
 \section{Performance}
 \subsection{Immutable Data Structures}
-Immutable data structures have a reputation of low-performance, but this is not
+Immutable data structures have a reputation for low-performance, but this is not
 exactly true in the modern-age. With the rise of multi-core consumer devices,
-many of the performance short-falls have been removed, and in fact, became
+many of the performance short-falls have been removed, and in fact, have become
 advantages \cite{slaks}.
 
 When sharing a mutable data structure across many threads, the programmer must
@@ -134,7 +134,7 @@ multi-core environment, which most consumer and enterprise devices fit into.
 \subsection{Mutable Data Structures}
 Since mutable data structures are able to be modified in-place directly, it
 would seem that there are clear performance benefits. However, it's
-not so simple. The performance benefits that are gained, shouldn't be often
+not so simple. The performance benefits that are gained, often shouldn't be
 used.
 
 When making many random non-sequential modifications to a data structure is
@@ -150,8 +150,8 @@ structures, shouldn't be taken advantage of; at least when possible.
 \section{Ease of Use}
 \subsection{Immutable Data Structures}
 Immutable data structures fall short when it comes to ease of use. Since these
-data structures by very definition can't directly be modified, the programmer
-must take take great care when using an immutable data structure.
+data structures by definition can't directly be modified, the programmer must
+take take great care when using an immutable data structure.
 
 Most programmers are used to object-oriented programming, where mutability has
 become the default. In contrast, functional programming has immutability as
@@ -210,7 +210,18 @@ up. It's common to limit the modifications of mutable data structures to
 specific areas of the codebase. In essence, you'd want to sort-of convert a
 mutable data structure into an immutable data structure once you are finished
 any modifications.
-\clearpage
+
+For example, let's say you have a mutable array, and you are accessing
+it from multiple threads. If you want to add an element to it, you'd need to
+use a lock. An example of this can be seen in figure 3.
+
+\begin{figure}[H]
+\centering
+
+\includegraphics{mutex}
+\caption{An example of a lock in C++}
+
+\end{figure}
 
 \section*{Conclusion}
 In conclusion, both immutable and mutable data structures are applicable to a
@@ -225,9 +236,9 @@ Mutability does win when it comes to ease of use, but its not a clear victory.
 Depending on which type programming background you have, mutability or
 immutability could be easier to use. Therefore, we can't say mutability totally
 wins, but for sure mutability is easier; since the majority of programmers
-are more failure with mutability.
+are more familiar with mutability.
 
-Immutability has a clear victory when it comes to safety. Due to the fact that
+Immutability has a clear victory when it comes to safety, due to the fact that
 the content can't change.
 
 \section*{Recommendation}
